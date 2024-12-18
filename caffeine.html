@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منوی کافه</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lateef&display=swap" rel="stylesheet"> <!-- لینک به فونت لاله زار -->
+    <style>
+        body {
+            font-family: 'Lateef', cursive; /* اعمال فونت لاله زار به کل صفحه */
+            background: url('./Caffein/b.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* استایل اینترو صفحه */
+        .intro-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            background-color: rgba(255, 255, 255, 0.8);
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .intro-page img {
+            max-width: 150px;
+        }
+
+        /* صفحه منو */
+        .menu-container {
+            display: none; /* منو در ابتدا مخفی است */
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            transform: translateY(-30px);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #333;
+            display: none; /* حذف منوی کافه */
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #555;
+            margin-top: 20px;
+            background-color: #F1E0C6; /* رنگ کرم */
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center; /* تیترها وسط چین شدند */
+            width: auto; /* عرض دکمه به اندازه متن باشد */
+            text-align: center;
+            margin: 0 auto; /* تراز کردن دکمه‌ها */
+            display: block; /* دکمه‌ها در یک خط باشند */
+        }
+
+        h2:hover {
+            background-color: #D8D8B2; /* رنگ هایلایت سبز */
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* استایل منو */
+        .menu {
+            list-style: none;
+            padding: 0;
+            text-align: right;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between; /* آیتم و قیمت در دو طرف قرار می‌گیرند */
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 10px; /* فاصله عمودی بین آیتم‌ها */
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item button {
+            font-family: 'Lateef', cursive; /* استفاده از فونت لاله زار */
+            font-size: 1.2em;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #3F5232; /* سبز ارتشی تیره */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .menu-item button:hover {
+            background-color: #4F3824; /* قهوه‌ای تیره برای هاور */
+            transform: scale(1.05);
+        }
+
+        .item-name {
+            margin-right: 20px;  /* فاصله آیتم از قیمت */
+        }
+
+        .price {
+            margin-left: 20px;  /* فاصله قیمت از آیتم */
+            font-weight: bold;
+        }
+
+        .menu-item .item-name, .menu-item .price {
+            margin-bottom: 10px; /* ایجاد فاصله عمودی در بین دکمه‌ها */
+        }
+
+        /* دکمه تیترها در مرکز صفحه */
+        .menu-container h2 {
+            text-align: center;
+            margin: 20px 0;
+            display: block;
+            width: auto;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #F1E0C6;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <!-- صفحه اینترو با لوگو -->
+    <div class="intro-page">
+        <img src="./caffein/l.png" alt="Cafe Logo">
+    </div>
+
+    <!-- منوی کافه -->
+    <div class="menu-container">
+        <div class="logo-container">
+            <img src="./caffein/l.png" alt="Cafe Logo" style="max-width: 120px;">
+        </div>
+        
+        <!-- دکمه تیترهای منو -->
+        <h2>نوشیدنی گرم</h2>
+        <ul class="menu">
+            <li class="menu-item">
+                <button class="item-name">اسپرسو</button><button class="price">۵۴,۰۰۰ تومان</button>
+            </li>
+            <li class="menu-item">
+                <button class="item-name">آمریکانو</button><button class="price">۶۹,۰۰۰ تومان</button>
+            </li>
+            <li class="menu-item">
+                <button class="item-name">ماکیاتو</button><button class="price">۶۹,۰۰۰ تومان</button>
+            </li>
+            <li class="menu-item">
+                <button class="item-name">اسپرسو آفوگاتو</button><button class="price">۶۹,۰۰۰ تومان</button>
+            </li>
+            <li class="menu-item">
+                <button class="item-name">قهوه دمی</button><button class="price">۶۹,۰۰۰ تومان</button>
+            </li>
+            <li class="menu-item">
+                <button class="item-name">کورتادو</button><button class="price">۷۳,۰۰۰ تومان</button>
+            </li>
+            <li class="menu-item">
+                <button class="item-name">کارامل ماکیاتو</button><button class="price">۷۴,۰۰۰ تومان</button>
+            </li>
+            <li class="menu-item">
+                <button class="item-name">کافه موکا</button><button class="price">۶۹,۰۰۰ تومان</button>
+            </li>
+            <li class="menu-item">
+                <button class="item-name">هات چاکلت</button><button class="price">۹۹,۰۰۰ تومان</button>
+            </li>
+            <li class="menu-item">
+                <button class="item-name">چای لاته</button><button class="price">۶۹,۰۰۰ تومان</button>
+            </li>
+            <li class="menu-item">
+                <button class="item-name">ماسالا</button><button class="price">۶۹,۰۰۰ تومان</button>
+            </li>
+        </ul>
+
+        <h2>نوشیدنی سرد</h2>
+        <ul class="menu">
+            <li class="menu-item">
+                <button class="item-name">آیس آمریکانو</button><button class="price">۷۹,۰۰۰ تومان</button>
+            </li>
+            <li class="menu-item">
+                <button class="item-name">آیس لاته</button><button class="price">۷۹,۰۰۰ تومان</button>
+            </li>
+            <li class="menu-item">
+                <button class="item-name">آیس موکا</button><button class="price">۷۹,۰۰۰ تومان</button>
+            </li>
+            <li class="menu-item">
+                <button class="item-name">آیس کارامل ماکیاتو</button><button class="price">۸۴,۰۰۰ تومان</button>
+            </li>
+            <li class="menu-item">
+                <button class="item-name">آیس چاکلت</button><button class="price">۱۰۹,۰۰۰ تومان</button>
+            </li>
+        </ul>
+
+        <h2>صبحانه</h2>
+        <ul class="menu">
+            <li class="menu-item">
+                <button class="item-name">املت گوجه</button><button class="price">۹۹,۰۰۰ تومان</button>
+            </li>
+            <li class="menu-item">
+                <button class="item-name">خوراک لوبیا</button><button class="price">۶۹,۰۰۰ تومان</button>
+            </li>
+            <li class="menu-item">
+                <button class="item-name">صبحانه انگلیسی</button><button class="price">۲۰۹,۰۰۰ تومان</button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        // نمایش لوگو پس از چند ثانیه
+        setTimeout(() => {
+            // مخفی کردن صفحه اینترو با افکت نرم
+            document.querySelector('.intro-page').style.opacity = '0';
+            setTimeout(() => {
+                document.querySelector('.intro-page').style.display = 'none';
+            }, 1000); // تا افکت به پایان برسد
+            // نمایش منو با افکت نرم و حرکت از بالا
+            document.querySelector('.menu-container').style.display = 'block';
+            document.querySelector('.menu-container').style.opacity = '1';
+            document.querySelector('.menu-container').style.transform = 'translateY(0)';
+        }, 3000); // ۳ ثانیه تا نمایش منو
+    </script>
+</body>
+</html>
